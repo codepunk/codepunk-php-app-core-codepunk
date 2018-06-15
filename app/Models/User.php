@@ -1,13 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Codepunk\Activatinator\Activable;
+use Codepunk\Activatinator\Contracts\Activable as ActivableContract;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
+    implements ActivableContract
 {
-    use Notifiable;
+    use Notifiable, Activable;
 
     /**
      * The attributes that are mass assignable.

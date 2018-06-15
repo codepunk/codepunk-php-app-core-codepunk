@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Codepunk\Activatinator\ActivatesUsers;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -18,7 +19,10 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers, ActivatesUsers {
+        ActivatesUsers::showLoginForm insteadof AuthenticatesUsers;
+        ActivatesUsers::authenticated insteadof AuthenticatesUsers;
+    }
 
     /**
      * Where to redirect users after login.

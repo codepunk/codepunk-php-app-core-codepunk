@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5bca48e56bbf3a25645858fcab9c285",
+    "content-hash": "079f9085e272050d869f7bad9df614c0",
     "packages": [
+        {
+            "name": "codepunk/activatinator",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codepunk/activatinator_laravel.git",
+                "reference": "cb4e1550bdef29f57dc032ab6fb35ca4567d006d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codepunk/activatinator_laravel/zipball/cb4e1550bdef29f57dc032ab6fb35ca4567d006d",
+                "reference": "cb4e1550bdef29f57dc032ab6fb35ca4567d006d",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=5.4",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.5",
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Codepunk\\Activatinator\\Providers\\ActivatinatorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Codepunk\\Activatinator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Slater",
+                    "email": "scott@codepunk.com"
+                }
+            ],
+            "description": "Package for adding user activation on top of Laravel's 'Auth' framework",
+            "keywords": [
+                "activation",
+                "auth",
+                "laravel",
+                "verification"
+            ],
+            "time": "2018-06-15T19:04:23+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
