@@ -6,11 +6,12 @@ use Codepunk\Activatinator\Activable;
 use Codepunk\Activatinator\Contracts\Activable as ActivableContract;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
     implements ActivableContract
 {
-    use Notifiable, Activable;
+    use Notifiable, Activable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
