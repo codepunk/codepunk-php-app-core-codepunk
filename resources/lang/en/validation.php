@@ -128,6 +128,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'username' => [
+            'regex' => 'Your :attribute may only contain alphanumeric characters and underscores.'
+        ],
     ],
 
     /*
