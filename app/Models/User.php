@@ -31,5 +31,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
+    /**
+     * Finds the user based on $usernameOrEmail.
+     * @param $usernameOrEmail string Either a username or an email.
+     * @return User
+     */
+    public function findForPassport($usernameOrEmail)
+    {
+        $is_email = filter_var($usernameOrEmail, FILTER_VALIDATE_EMAIL) != false;
+        if ($is_email) {
+            return $this->where('email', $usernameOrEmail)->first();
+        } else {
+            return $this->where('username', $usernameOrEmail)->first();
+        }
+    }
 }
