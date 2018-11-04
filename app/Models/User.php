@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Traits\FindsForPassport;
+use App\Http\Traits\FindsForPassport;
 use Codepunk\Activatinator\Activable;
 use Codepunk\Activatinator\Contracts\Activable as ActivableContract;
 use Illuminate\Notifications\Notifiable;
