@@ -2,16 +2,23 @@
 
 namespace App\Models;
 
+use App\Models\Traits\FindsForPassport;
 use Codepunk\Activatinator\Activable;
 use Codepunk\Activatinator\Contracts\Activable as ActivableContract;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
 
+/**
+ * Class User
+ * @package App\Models
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
+
 class User extends Authenticatable
     implements ActivableContract
 {
-    use Notifiable, Activable, HasApiTokens;
+    use Notifiable, Activable, HasApiTokens, FindsForPassport;
 
     /**
      * The attributes that are mass assignable.
@@ -31,18 +38,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * Finds the user based on $usernameOrEmail.
-     * @param $usernameOrEmail string Either a username or an email.
-     * @return User
-     */
-    public function findForPassport($usernameOrEmail)
-    {
-        $is_email = filter_var($usernameOrEmail, FILTER_VALIDATE_EMAIL) != false;
-        if ($is_email) {
-            return $this->where('email', $usernameOrEmail)->first();
-        } else {
-            return $this->where('username', $usernameOrEmail)->first();
-        }
-    }
 }

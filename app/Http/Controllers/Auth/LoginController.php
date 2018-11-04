@@ -43,31 +43,19 @@ class LoginController extends Controller
     }
 
     /**
-     * Attempt to log the user into the application. If username_or_email filters to an email, attemptLogin will
-     * try to login with the input first as an email. Otherwise (or if that attempt fails), attemptLogin will
-     * then try to login with the input as a username.
+     * Attempt to log the user into the application, based on the determination of whether the input is an email
+     * or a username.
      *
      * @param  \Illuminate\Http\Request $request
      * @return bool
      */
     protected function attemptLogin(Request $request)
     {
-        $succeeded = false;
         $input = $request->input($this->username());
-        $is_email = filter_var($input, FILTER_VALIDATE_EMAIL) != false;
-        if ($is_email) {
-            $succeeded = $this->guard()->attempt(
-                $this->credentials($request, 'email'), $request->filled('remember')
-            );
-        }
-
-        if (!$succeeded) {
-            $succeeded = $this->guard()->attempt(
-                $this->credentials($request, 'username'), $request->filled('remember')
-            );
-        }
-
-        return $succeeded;
+        $field = filter_var($input, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        return $this->guard()->attempt(
+            $this->credentials($request, $field), $request->filled('remember')
+        );
     }
 
     /**
