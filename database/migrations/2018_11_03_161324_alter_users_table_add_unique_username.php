@@ -15,8 +15,8 @@ class AlterUsersTableAddUniqueUsername extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->renameColumn('name', 'username');
-            $table->string('family_name')->after('email');
-            $table->string('given_name')->after('family_name');
+            $table->string('family_name')->after('email')->nullable();
+            $table->string('given_name')->after('family_name')->nullable();
             $table->string('display_name')->after('given_name')->nullable();
             $table->unique('username');
         });

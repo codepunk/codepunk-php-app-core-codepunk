@@ -39,11 +39,12 @@
                             </div>
                         </div>
 
+                        <!--
                         <div class="form-group row">
                             <label for="given_name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="given_name" type="text" class="form-control{{ $errors->has('given_name') ? ' is-invalid' : '' }}" name="given_name" value="{{ old('given_name') }}" required autofocus>
+                                <input id="given_name" type="text" class="form-control{{ $errors->has('given_name') ? ' is-invalid' : '' }}" name="given_name" value="{{ old('given_name') }}" autofocus>
 
                                 @if ($errors->has('given_name'))
                                     <span class="invalid-feedback" role="alert">
@@ -57,7 +58,7 @@
                             <label for="family_name" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="family_name" type="text" class="form-control{{ $errors->has('family_name') ? ' is-invalid' : '' }}" name="family_name" value="{{ old('family_name') }}" required autofocus>
+                                <input id="family_name" type="text" class="form-control{{ $errors->has('family_name') ? ' is-invalid' : '' }}" name="family_name" value="{{ old('family_name') }}" autofocus>
 
                                 @if ($errors->has('family_name'))
                                     <span class="invalid-feedback" role="alert">
@@ -66,6 +67,7 @@
                                 @endif
                             </div>
                         </div>
+                        -->
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

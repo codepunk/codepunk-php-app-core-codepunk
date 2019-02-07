@@ -51,11 +51,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        // NOTE given_name and family_name have been removed from the registration process. At last commit these two
+        // fields were configured as follows:
+        // 'given_name' => 'sometimes|nullable|string|max:255',
+        // 'family_name' => 'sometimes|nullable|string|max:255',
+
         return Validator::make($data, [
-            'username' => 'required|string|max:64|unique:users|regex:/^[\w-]*$/',
+            'username' => 'required|string|max:64|unique:users|regex:/^\w*$/',
             'email' => 'required|string|email|max:255|unique:users',
-            'given_name' => 'required|string|max:255',
-            'family_name' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -71,8 +74,6 @@ class RegisterController extends Controller
         return (new User)->create([
             'username' => $data['username'],
             'email' => $data['email'],
-            'given_name' => $data['given_name'],
-            'family_name' => $data['family_name'],
             'password' => Hash::make($data['password']),
         ]);
     }
