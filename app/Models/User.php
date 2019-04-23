@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Http\Traits\FindsForPassport;
 use Codepunk\Activatinator\Activable;
 use Codepunk\Activatinator\Contracts\Activable as ActivableContract;
+use Codepunk\Activatinator\Traits\FindsForPassport;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
