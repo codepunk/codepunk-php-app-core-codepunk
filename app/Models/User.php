@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Codepunk\Activatinator\Activable;
 use Codepunk\Activatinator\Contracts\Activable as ActivableContract;
-use Codepunk\Activatinator\Traits\FindsForPassport;
-use Illuminate\Notifications\Notifiable;
+use Codepunk\Activatinator\Traits\ValidatesForPassport;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 
 /**
@@ -18,7 +18,7 @@ use Laravel\Passport\HasApiTokens;
 class User extends Authenticatable
     implements ActivableContract
 {
-    use Notifiable, Activable, HasApiTokens, FindsForPassport;
+    use Notifiable, Activable, HasApiTokens, ValidatesForPassport;
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'given_name', 'family_name','password',
+        'username', 'email', 'given_name', 'family_name', 'password',
     ];
 
     /**
