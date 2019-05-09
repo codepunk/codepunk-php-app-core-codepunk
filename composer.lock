@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82e185ca1e45c9b557f44e02aebf5177",
+    "content-hash": "2eb5b2b018e420ae31267c2a85608065",
     "packages": [
         {
             "name": "codepunk/activatinator",
-            "version": "v1.2.6",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codepunk/codepunk-php-lib-core-doofenschmirtz-activatinator.git",
-                "reference": "fba30ccb4489cd15e68aaddbf7bdbff195188fda"
+                "reference": "7556cda4b35fe7725f2945a34f7c1a0429b30dd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codepunk/codepunk-php-lib-core-doofenschmirtz-activatinator/zipball/fba30ccb4489cd15e68aaddbf7bdbff195188fda",
-                "reference": "fba30ccb4489cd15e68aaddbf7bdbff195188fda",
+                "url": "https://api.github.com/repos/codepunk/codepunk-php-lib-core-doofenschmirtz-activatinator/zipball/7556cda4b35fe7725f2945a34f7c1a0429b30dd6",
+                "reference": "7556cda4b35fe7725f2945a34f7c1a0429b30dd6",
                 "shasum": ""
             },
             "require": {
@@ -58,7 +58,7 @@
                 "laravel",
                 "verification"
             ],
-            "time": "2019-05-09T17:03:00+00:00"
+            "time": "2019-05-09T17:36:28+00:00"
         },
         {
             "name": "defuse/php-encryption",
